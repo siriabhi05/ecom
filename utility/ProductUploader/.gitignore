@@ -1,0 +1,62 @@
+# User-specific files
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.[Cc]ache
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files for NuGet packages
+*.nupkg
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]istro/
+[Dd]ebug-AnyCPU/
+[Dd]ebug-x86/
+[Dd]ebug-x64/
+[Dd]Release/
+[Dd]Release-AnyCPU/
+[Dd]Release-x86/
+[Dd]Release-x64/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+
+# User-specific folders and files
+.vs2019/
+.vs2017/
+
+# Windows Installer logs
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Npm and other temp directories
+node_modules/
+
+# JetBrains Rider
+.idea/
+
+# Build directories for other SDKs
+bin/
+obj/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# VS for Mac
+.vscode/
+
+# Azure Function
+local.settings.json
