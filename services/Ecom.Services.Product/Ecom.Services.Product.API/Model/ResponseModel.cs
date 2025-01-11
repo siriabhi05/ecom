@@ -6,7 +6,7 @@ namespace Ecom.Services.Product.Api.Model
 
     public class ResponseModel
     {
-        public HttpStatusCode StatusCode { get; set; } = System.Net.HttpStatusCode.OK;
+        public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.OK;
         public string Message { get; set; } = string.Empty;
     }
 
