@@ -24,7 +24,8 @@ internal class Program
         {
             var awsConfig = sp.GetRequiredService<IOptions<AWSConfig>>().Value;
             var pool = new SingleNodeConnectionPool(new Uri(awsConfig.Uri));
-            var httpConnection = new AwsSigV4HttpConnection(new BasicAWSCredentials("XXXXX", "XXXX"), Amazon.RegionEndpoint.GetBySystemName(awsConfig.Region));
+            var httpConnection = new AwsSigV4HttpConnection(new BasicAWSCredentials("XXXXX", "XXXX"),
+                Amazon.RegionEndpoint.GetBySystemName(awsConfig.Region));
 
             var connectionSettings = new ConnectionSettings(pool, httpConnection)
                 .EnableDebugMode()
