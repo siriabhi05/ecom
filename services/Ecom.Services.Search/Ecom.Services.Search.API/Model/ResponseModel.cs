@@ -11,6 +11,6 @@ namespace Ecom.Services.Search.API.Model
 
     public class SearchQueryResponseModel : ResponseModel
     {
-        public List<SearchServiceModel> searchProducts { get; set; } = [];
+        public List<SearchModel> searchProducts { get; set; } = [];
     }
 }

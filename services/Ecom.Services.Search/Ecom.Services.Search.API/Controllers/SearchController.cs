@@ -34,7 +34,7 @@ namespace Ecom.Services.Search.API.Controllers
 
         [HttpPost]
         [Route("create/bulk")]
-        public async Task<ResponseModel> BulkPost([FromBody] List<SearchServiceModel> models)
+        public async Task<ResponseModel> BulkPost([FromBody] List<SearchModel> models)
         {
             var response = new ResponseModel();
             try
@@ -56,7 +56,7 @@ namespace Ecom.Services.Search.API.Controllers
 
         [HttpPost]
         [Route("create")]
-        public async Task<ResponseModel> Post([FromBody] SearchServiceModel model)
+        public async Task<ResponseModel> Post([FromBody] SearchModel model)
         {
             var response = new ResponseModel();
             try

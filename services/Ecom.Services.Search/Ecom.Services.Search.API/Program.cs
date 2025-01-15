@@ -1,7 +1,6 @@
 using Amazon.Runtime;
+using Ecom.Services.Common.OpenSearch.Interface;
 using Ecom.Services.Search.API.Model;
-using Ecom.Services.Search.Database;
-using Ecom.Services.Search.Database.Interface;
 using Ecom.Services.Search.Service;
 using Ecom.Services.Search.Service.Interface;
 using Microsoft.Extensions.Options;
@@ -35,7 +34,7 @@ internal class Program
             return opensearchClient;
         });
         builder.Services.AddSingleton<IService, Service>();
-        builder.Services.AddSingleton<IRepository, Repository>();
+        builder.Services.AddSingleton<IOpenSearch, Ecom.Services.Common.OpenSearch.OpenSearch>();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

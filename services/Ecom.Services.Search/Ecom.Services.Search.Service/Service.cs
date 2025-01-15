@@ -1,32 +1,30 @@
-﻿using Ecom.Services.Search.Database.Interface;
+﻿using Ecom.Services.Common.OpenSearch.Interface;
 using Ecom.Services.Search.Service.Interface;
-using Ecom.Services.Search.Service.Mapper;
 using Ecom.Services.Search.Service.Model;
 
 namespace Ecom.Services.Search.Service
 {
-    public class Service(IRepository repository) : IService
+    public class Service(IOpenSearch openSearch) : IService
     {
         public async Task<bool> CreateIndexAsync(string index)
         {
-            return await repository.CreateIndexAsync(index);
+            return await openSearch.CreateIndexAsync<SearchModel>(index);
         }
 
-        public async Task<bool> PostAsync(SearchServiceModel model)
+        public async Task<bool> PostAsync(SearchModel model)
         {
-            return await repository.PostAsync(SearchModelMapper.ServiceToDatabaseModel(model));
+            return await openSearch.PostAsync(model);
         }
 
-        public async Task<bool> PostBulkAsync(List<SearchServiceModel> models)
+        public async Task<bool> PostBulkAsync(List<SearchModel> models)
         {
-            var dbModels = models.Select(m => SearchModelMapper.ServiceToDatabaseModel(m)).ToList();
-            return await repository.PostBulkAsync(dbModels);
+            return await openSearch.PostBulkAsync(models);
         }
 
-        public async Task<List<SearchServiceModel>> QueryAsync(string query)
+        public async Task<List<SearchModel>> QueryAsync(string query)
         {
-            var searchDbModels = await repository.QueryAsync(query);
-            return searchDbModels.Select(s => SearchModelMapper.DatabaseToServiceModel(s)).ToList();
+            return await openSearch.QueryAsync<SearchModel>(query,
+                [nameof(SearchModel.Id), nameof(SearchModel.Title), nameof(SearchModel.Description)]);
         }
     }
 }

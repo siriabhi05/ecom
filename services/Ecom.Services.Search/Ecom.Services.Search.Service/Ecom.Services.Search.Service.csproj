@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ecom.Services.Search.Database\Ecom.Services.Search.Database.csproj" />
+    <ProjectReference Include="..\..\Ecom.Services.Common\Ecom.Services.Common.OpenSearch\Ecom.Services.Common.OpenSearch.csproj" />
   </ItemGroup>
 
 </Project>
