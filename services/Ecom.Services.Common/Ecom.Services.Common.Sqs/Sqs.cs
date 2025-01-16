@@ -1,5 +1,4 @@
-﻿using Amazon.Runtime.Internal;
-using Amazon.SQS;
+﻿using Amazon.SQS;
 using Amazon.SQS.Model;
 using Ecom.Services.Common.Sqs.Interface;
 using Ecom.Services.Common.Sqs.Model;

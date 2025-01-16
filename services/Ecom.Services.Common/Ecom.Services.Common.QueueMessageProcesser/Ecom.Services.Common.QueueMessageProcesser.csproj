@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSearch.Client" Version="1.8.0" />
-    <PackageReference Include="OpenSearch.Net" Version="1.8.0" />
-    <PackageReference Include="OpenSearch.Net.Auth.AwsSigV4" Version="1.8.0" />
+    <ProjectReference Include="..\Ecom.Services.Common.Sqs\Ecom.Services.Common.Sqs.csproj" />
   </ItemGroup>
 
 </Project>
